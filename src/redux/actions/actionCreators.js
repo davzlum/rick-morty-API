@@ -9,7 +9,7 @@ export default function getApiData(section) {
       const { data } = await axios(`${url}/${section}`);
       dispatch({
         type: actionTypes.LOAD_DATA,
-        data,
+        apiData: data,
       });
     } catch (error) {
       dispatch({

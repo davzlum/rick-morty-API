@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import getCharacters from '../../service/rick-morty.service';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import getApiData from '../../redux/actions/actionCreators';
 
 function List() {
-  const [characters, setCharacters] = useState([]);
+  const dispatch = useDispatch();
+  const apiData = useSelector((store) => store.apiData);
   useEffect(() => {
-    getCharacters().then(setCharacters);
+    dispatch(getApiData('character'));
   }, []);
   return (
     <>
-      {characters.map((character) => (<li>{character.name}</li>))}
+      {apiData.results?.map((dataItem) => (<li>{dataItem.name}</li>))}
     </>
   );
 }
