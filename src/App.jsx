@@ -1,9 +1,20 @@
 import React from 'react';
+import {
+  BrowserRouter, Route, Switch,
+} from 'react-router-dom';
 import List from './components/List';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <List />
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/:section" component={List} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
