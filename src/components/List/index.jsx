@@ -33,7 +33,7 @@ function List() {
     <>
       {apiData.results?.map((dataItem) => (<li>{dataItem.name}</li>))}
       <div className={classes.root}>
-        <Pagination count={apiData.info.pages} page={pagination} onChange={handleChange} />
+        <Pagination color="secondary" count={apiData.info?.pages} page={pagination} onChange={handleChange} />
       </div>
     </>
   );
