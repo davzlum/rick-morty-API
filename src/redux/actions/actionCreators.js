@@ -22,8 +22,6 @@ export function getApiData(section, page) {
 export function getSelectedApiData(section, id) {
   return async (dispatch) => {
     try {
-      // eslint-disable-next-line no-debugger
-      debugger;
       const { data } = await axios(`${url}/${section}/${id}`);
       dispatch({
         type: actionTypes.LOAD_SELECTED_DATA,
