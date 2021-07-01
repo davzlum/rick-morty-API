@@ -1,8 +1,9 @@
 import React from 'react';
+import List from './components/List';
 
 function App() {
   return (
-    <h1>Salami</h1>
+    <List />
   );
 }
 
