@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import List from './components/List';
 import Dashboard from './components/Dashboard';
+import Detail from './components/Detail';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route path="/:section" component={List} />
+          <Route exact path="/:section" component={List} />
+          <Route exact path="/:section/:id" component={Detail} />
         </Switch>
       </BrowserRouter>
     </>

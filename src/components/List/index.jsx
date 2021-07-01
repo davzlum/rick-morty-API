@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import getApiData from '../../redux/actions/actionCreators';
+import { getApiData } from '../../redux/actions/actionCreators';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ function List() {
 
   return (
     <>
-      {apiData.results?.map((dataItem) => (<li>{dataItem.name}</li>))}
+      {apiData.results?.map((dataItem) => (<li><Link to={`/${section}/${dataItem.id}`}>{dataItem.name}</Link></li>))}
       <div className={classes.root}>
         <Pagination color="secondary" count={apiData.info?.pages} page={pagination} onChange={handleChange} />
       </div>
