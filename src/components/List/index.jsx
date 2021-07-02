@@ -31,7 +31,7 @@ function List() {
 
   return (
     <>
-      {apiData.results?.map((dataItem) => (<li key={dataItem.name}><Link to={`/${section}/${dataItem.id}`}>{dataItem.name}</Link></li>))}
+      {apiData.results?.map((dataItem) => (<li><Link to={`/${section}/${dataItem.id}`}>{dataItem.name}</Link></li>))}
       <div className={classes.root}>
         <Pagination color="secondary" count={apiData.info?.pages} page={pagination} onChange={handleChange} />
       </div>

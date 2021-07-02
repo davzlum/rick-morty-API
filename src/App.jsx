@@ -5,6 +5,7 @@ import {
 import List from './components/List';
 import Dashboard from './components/Dashboard';
 import Detail from './components/Detail';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/:section" component={List} />
           <Route exact path="/:section/:id" component={Detail} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </>
