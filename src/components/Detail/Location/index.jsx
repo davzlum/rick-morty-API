@@ -7,6 +7,7 @@ export default function Location({ data }) {
       <h1>{data?.name}</h1>
       <p>{data?.type}</p>
       <p>{data?.residents}</p>
+      <p>{data?.dimension}</p>
     </>
   );
 }
